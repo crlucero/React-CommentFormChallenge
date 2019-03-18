@@ -39,6 +39,14 @@ export default class CommentForm extends Component {
       this.setState({ error: 'All fields are required to submit' });
       return;
     }
+    // clears error if form is valid
+
+    this.setState({ error: '' });
+  }
+
+  // Return user input if input does not equal an empty field on submission
+  isFormValid() {
+    return this.state.comment.name !== '' && this.state.comment.message !== '';
   }
 
   // This populates an error alert if all fields do not take input
