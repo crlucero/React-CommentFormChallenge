@@ -40,8 +40,9 @@ export default class CommentForm extends Component {
       return;
     }
     // clears error if form is valid
-
     this.setState({ error: '' });
+
+    // TODO: add comments to database with api call
   }
 
   // Return user input if input does not equal an empty field on submission
@@ -85,9 +86,7 @@ export default class CommentForm extends Component {
           {this.renderError()}
 
           <div className="form-group">
-            <button disabled={this.state.loading} className="btn btn-primary">
-              Post Comment
-            </button>
+            <button className="btn btn-primary">Post Comment</button>
           </div>
         </form>
       </React.Fragment>

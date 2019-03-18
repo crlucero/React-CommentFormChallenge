@@ -13,7 +13,7 @@ export default function CommentList(props) {
       {/* If there are no comments, shoe 'Be the first to comment' */}
       {props.comments.length === 0 ? (
         <div className="alert text-center alert-info">
-          Be the first one to comment!
+          Comment before someone else!
         </div>
       ) : null}
       {/* Loop through list of comments */}
