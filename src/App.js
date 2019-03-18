@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CommentList from './components/CommentList';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class App extends Component {
             {/* Comment Form will go here */}
           </div>
           <div className="col-8 pt-3 border-right">
-            {/* Comment List will go here */}
+            <CommentList comments={this.state.comments} />
           </div>
         </div>
       </div>

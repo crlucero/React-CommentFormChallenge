@@ -8,12 +8,13 @@ export default function CommentList(props) {
         <span className="badge badge-success">{props.comments.length}</span>
         Comment{props.comments.length > 0 ? 's' : ''}
       </h5>
+      {/* If there are no comments, shoe 'Be the first to comment' */}
       {props.comments.length === 0 ? (
         <div className="alert text-center alert-info">
           Be the first one to comment!
         </div>
       ) : null}
-      // Loop through list of comments
+      {/* Loop through list of comments */}
       {props.comments.map((comment, index) => (
         <Comment key={index} comment={comment} />
       ))}
