@@ -8,6 +8,7 @@ export default function Comment(props) {
       <div className="p-2 shadow-sm rounder bg-light border">
         <small className="float-right text-muted">{time}</small>
         <h6 className="mt-0 mb-1 text-muted">{name}</h6>
+        <hr />
         {message}
       </div>
     </div>

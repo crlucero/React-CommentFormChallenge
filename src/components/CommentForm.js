@@ -8,39 +8,81 @@ export default class CommentForm extends Component {
 
       comment: {
         name: '',
-        userMessage: ''
+        message: ''
       }
     };
 
     // bind context to methods
-    // handleChange
-    //onSubmit
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  // This handles input fields changes which update the state
+  handleChange = event => {
+    const { value, name } = event.target;
+
+    this.setState({
+      ...this.state,
+      comment: {
+        ...this.state.comment,
+        [name]: value
+      }
+    });
+  };
+
+  // This will handle the form submission
+  onSubmit(event) {
+    // prevent default form submission
+    event.preventDefault();
+
+    if (!this.isFormValid()) {
+      this.setState({ error: 'All fields are required to submit' });
+      return;
+    }
+  }
+
+  // This populates an error alert if all fields do not take input
+  renderError() {
+    return this.state.error ? (
+      <div className="alert alert-danger">{this.state.error}</div>
+    ) : null;
+  }
+
   render() {
     return (
-        <React.Fragment>
-          <form method="post" onSubmit={}>
-            <div className="form-group">
-              <input type="text"
-              className='form-control'
-              placeholder='Your Name'
-              name='name'
+      <React.Fragment>
+        <form method="post" onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <input
+              onChange={this.handleChange}
               value={this.state.comment.name}
+              className="form-control"
+              placeholder="Your Name"
+              name="name"
+              type="text"
+            />
+          </div>
+
+          <div className="form-group">
+            <textarea
               onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <input type="text"
-              className='form-control'
-              placeholder='Comments here'
-              name='message'
-              value={this.state.comment.userMessage}
-              onChange={this.handleChange}
-              rows="4"
-              />
-            </div>
-          </form>
-        </React.Fragment>
+              value={this.state.comment.message}
+              className="form-control"
+              placeholder="Your Comment"
+              name="message"
+              rows="5"
+            />
+          </div>
+
+          {this.renderError()}
+
+          <div className="form-group">
+            <button disabled={this.state.loading} className="btn btn-primary">
+              Post Comment
+            </button>
+          </div>
+        </form>
+      </React.Fragment>
     );
   }
 }

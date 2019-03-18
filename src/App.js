@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CommentList from './components/CommentList';
+import CommentForm from './components/CommentForm';
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,15 @@ class App extends Component {
     this.state = {
       comments: []
     };
+
+    this.addComment = this.addComment.bind(this);
+  }
+
+  addComment(comment) {
+    this.setState({
+      // properties of original comment state are copied on to new comment
+      comments: [comment, ...this.state.comments]
+    });
   }
 
   render() {
@@ -19,7 +29,10 @@ class App extends Component {
         </header>
         <div className="row">
           <div className="col-4 pt-3 border-right">
-            {/* Comment Form will go here */}
+            <h6>
+              <strong>What's on your mind? </strong>
+            </h6>
+            <CommentForm addComment={this.addComment} />
           </div>
           <div className="col-8 pt-3 border-right">
             <CommentList comments={this.state.comments} />
