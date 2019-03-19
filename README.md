@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### by Cristian Lucero
 
+### Link to site
+
+https://brave-mcnulty-9a6b1d.netlify.com/
+
 ## Setup/Install
 
 - Clone repo
