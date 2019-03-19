@@ -56,24 +56,6 @@ export default class CommentForm extends Component {
     });
   }
 
-  // Return user input if input does not equal an empty field on submission
-  // isFormValid() {
-  //   return this.state.comment.name !== '' && this.state.comment.message !== '';
-  // }
-
-  // componentWillMount() {
-  //   this.fetchComments();
-  // }
-
-  // fetchComments() {
-  //   commentsRef.on('value', message => {
-  //     const comments = message.val();
-  //     this.setState({
-  //       comments
-  //     });
-  //   });
-  // }
-
   render() {
     return (
       <React.Fragment>

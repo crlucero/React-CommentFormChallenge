@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import CommentList from './components/CommentList';
 import CommentForm from './components/CommentForm';
-import { commentsRef } from './firebase';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       comments: []
     };
-
-    this.addComment = this.addComment.bind(this);
-  }
-
-  addComment(comment) {
-    commentsRef.push(comment);
   }
 
   render() {
