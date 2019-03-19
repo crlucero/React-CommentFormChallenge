@@ -1,5 +1,26 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# React Comments
+
+### Comment submission application
+
+### by Cristian Lucero
+
+## Setup/Install
+
+- Clone repo
+- Create project on firebase, add web development to project
+- Once given a modal with api key, copy the firebase key into firebase.js file
+- On firebase site, click on database in sidebar. Select and create realtime database, then click on rules and set both parameters to 'true'
+- Open terminal, navigate to project folder, run 'npm install'
+- Run 'npm start'
+
+### Technologies Used
+
+- React
+- CSS
+- Firebase
+
 ## Available Scripts
 
 In the project directory, you can run:
