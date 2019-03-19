@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CommentList from './components/CommentList';
 import CommentForm from './components/CommentForm';
+import { commentsRef } from './firebase';
 
 class App extends Component {
   constructor(props) {
@@ -15,10 +16,7 @@ class App extends Component {
   }
 
   addComment(comment) {
-    this.setState({
-      // properties of original comment state are copied on to new comment
-      comments: [comment, ...this.state.comments]
-    });
+    commentsRef.push(comment);
   }
 
   render() {

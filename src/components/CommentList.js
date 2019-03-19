@@ -6,7 +6,7 @@ export default function CommentList(props) {
     <div className="commentList">
       <h5 className="text-muted mb-4">
         <span className="badge badge-warning mx-1">
-          {props.comments.length}{' '}
+          {props.comments.length}
         </span>
         Comment{props.comments.length > 1 ? 's' : ''}
       </h5>
